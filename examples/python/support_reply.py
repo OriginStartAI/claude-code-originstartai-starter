@@ -7,10 +7,16 @@ api_key = os.environ["ORIGINSTARTAI_API_KEY"]
 base_url = os.environ.get("ORIGINSTARTAI_BASE_URL", "https://YOUR_PUBLIC_API_BASE_URL/v1")
 model = os.environ.get("ORIGINSTARTAI_MODEL", "YOUR_ENABLED_MODEL")
 
+ticket = """
+I copied the quick start but received a 401 error. I want to know what to check first.
+"""
+
 payload = {
     "model": model,
+    "temperature": 0.3,
     "messages": [
-        {"role": "user", "content": "Say hello from OriginStartAI"}
+        {"role": "system", "content": "You write concise developer support replies."},
+        {"role": "user", "content": f"Reply to this support ticket:\n{ticket}"},
     ],
 }
 

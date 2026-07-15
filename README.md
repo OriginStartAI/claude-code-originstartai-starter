@@ -2,20 +2,27 @@
 
 Run your first OriginStartAI API call from a Claude Code style workflow in minutes.
 
-## Why This Exists
+This repo is designed for developers who want a small, copyable, OpenAI-compatible starter they can test from a terminal, adapt inside Claude Code, and then move into a real product workflow.
 
-This starter is for developers who want an OpenAI-compatible API endpoint that is easy to test from terminal tools, scripts, and Claude Code related workflows.
+## Fast Path
 
-## Quick Start
-
-1. Get your API key from https://originstartai.com
-2. Copy `.env.example` to `.env`
-3. Set `ORIGINSTARTAI_API_KEY`
-4. Run the curl, Python, or Node.js example
+1. Create an account at https://originstartai.com?utm_source=github&utm_medium=repo&utm_campaign=claude_code_starter
+2. Get an API key from the OriginStartAI console.
+3. Copy `.env.example` to `.env`.
+4. Set `ORIGINSTARTAI_API_KEY`, `ORIGINSTARTAI_BASE_URL`, and `ORIGINSTARTAI_MODEL`.
+5. Run one of the examples below.
 
 New user bonus: recharge `$5` and get `$5` extra API credits.
 
-## curl
+## First API Call
+
+```bash
+python examples/python/first_call.py
+```
+
+```bash
+node examples/node/first_call.mjs
+```
 
 ```bash
 curl "$ORIGINSTARTAI_BASE_URL/chat/completions" \
@@ -29,35 +36,50 @@ curl "$ORIGINSTARTAI_BASE_URL/chat/completions" \
   }'
 ```
 
-## Python
+## Claude Code Workflow
 
-```bash
-python examples/python/first_call.py
+Use this starter as a minimal project that Claude Code can inspect and modify:
+
+```text
+1. Run the first call.
+2. Ask Claude Code to add your product-specific prompt.
+3. Add a small test payload in `examples/`.
+4. Move stable code into your app.
 ```
 
-## Node.js
+Recommended prompts:
 
-```bash
-node examples/node/first_call.mjs
+```text
+Add a product support reply example using the existing OriginStartAI client style.
+```
+
+```text
+Convert this single API call into a reusable helper with retries and clear error messages.
 ```
 
 ## Environment
 
 ```bash
 ORIGINSTARTAI_API_KEY=your_api_key_here
-ORIGINSTARTAI_BASE_URL=https://YOUR_7016_API_BASE_URL/v1
-ORIGINSTARTAI_MODEL=YOUR_DEFAULT_MODEL
+ORIGINSTARTAI_BASE_URL=https://YOUR_PUBLIC_API_BASE_URL/v1
+ORIGINSTARTAI_MODEL=YOUR_ENABLED_MODEL
 ```
+
+## Docs
+
+- [First call guide](docs/first-call.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [Recharge and credits](docs/recharge-and-credits.md)
+- [Claude Code task prompts](docs/claude-code-prompts.md)
 
 ## Troubleshooting
 
 - `401 Unauthorized`: check whether your API key is correct.
 - `insufficient credits`: recharge in the OriginStartAI console.
 - `model not found`: check whether the selected model is enabled for your account.
-- `timeout`: retry later or reduce the prompt size.
+- `timeout`: retry later, reduce the prompt size, or add retry logic.
 
 ## Links
 
-- Website: https://originstartai.com
+- Website: https://originstartai.com?utm_source=github&utm_medium=repo&utm_campaign=claude_code_starter
 - Support: support@originstartai.com
-
