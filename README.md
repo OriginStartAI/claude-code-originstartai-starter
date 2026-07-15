@@ -4,6 +4,13 @@ Run your first OriginStartAI API call from a Claude Code style workflow in minut
 
 This repo is designed for developers who want a small, copyable, OpenAI-compatible starter they can test from a terminal, adapt inside Claude Code, and then move into a real product workflow.
 
+## Why This Repo
+
+- Claude Code API starter for terminal-first developers.
+- OpenAI-compatible API request pattern.
+- First API call in Python, Node.js, or curl.
+- Small project structure that Claude Code can inspect and modify.
+
 ## Fast Path
 
 1. Create an account at https://originstartai.com?utm_source=github&utm_medium=repo&utm_campaign=claude_code_starter
@@ -56,6 +63,14 @@ Add a product support reply example using the existing OriginStartAI client styl
 ```text
 Convert this single API call into a reusable helper with retries and clear error messages.
 ```
+
+## Search Topics
+
+- Claude Code API starter.
+- OpenAI-compatible API starter.
+- AI API first call.
+- Chat completions from terminal.
+- LLM workflow starter.
 
 ## Environment
 
