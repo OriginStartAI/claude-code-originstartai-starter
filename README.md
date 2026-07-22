@@ -1,27 +1,16 @@
 # Claude Code OriginStartAI Starter
 
-Run your first OriginStartAI API call from a Claude Code style workflow in minutes.
+Run a first OriginStartAI OpenAI-compatible API call from a Claude Code workflow, then turn the working call into product code.
 
-This repo is designed for developers who want a small, copyable, OpenAI-compatible starter they can test from a terminal, adapt inside Claude Code, and then move into a real product workflow.
+This starter is for terminal-first developers who want a tiny repo Claude Code can inspect, modify, and extend without pulling in a heavy SDK or framework.
 
-## Why This Repo
+## 30-Second First Call
 
-- Claude Code API starter for terminal-first developers.
-- OpenAI-compatible API request pattern.
-- First API call in Python, Node.js, or curl.
-- Small project structure that Claude Code can inspect and modify.
-
-## Fast Path
-
-1. Create an account at https://originstartai.com?utm_source=github&utm_medium=repo&utm_campaign=claude_code_starter
-2. Get an API key from the OriginStartAI console.
+1. Create an account: https://originstartai.com?utm_source=github&utm_medium=repo&utm_campaign=claude_code_starter
+2. Create an API key in the OriginStartAI console.
 3. Copy `.env.example` to `.env`.
 4. Set `ORIGINSTARTAI_API_KEY`, `ORIGINSTARTAI_BASE_URL`, and `ORIGINSTARTAI_MODEL`.
-5. Run one of the examples below.
-
-New user bonus: recharge `$5` and get `$5` extra API credits.
-
-## First API Call
+5. Run Python or Node.js:
 
 ```bash
 python examples/python/first_call.py
@@ -30,6 +19,12 @@ python examples/python/first_call.py
 ```bash
 node examples/node/first_call.mjs
 ```
+
+New user bonus: after your first call works, recharge `$5` and get `$5` extra API credits to test a real workflow.
+
+## Copyable curl Check
+
+Use curl first when you only want to confirm that the API key, base URL, and model are valid:
 
 ```bash
 curl "$ORIGINSTARTAI_BASE_URL/chat/completions" \
@@ -43,18 +38,17 @@ curl "$ORIGINSTARTAI_BASE_URL/chat/completions" \
   }'
 ```
 
+## Why Developers Use This
+
+- Claude Code friendly project layout.
+- OpenAI-compatible request shape.
+- Python and Node.js first-call examples.
+- Minimal files that are easy to copy into an existing app.
+- Clear next step from first call to a small paid production-style test.
+
 ## Claude Code Workflow
 
-Use this starter as a minimal project that Claude Code can inspect and modify:
-
-```text
-1. Run the first call.
-2. Ask Claude Code to add your product-specific prompt.
-3. Add a small test payload in `examples/`.
-4. Move stable code into your app.
-```
-
-Recommended prompts:
+Open this repo in Claude Code and use one of these prompts after the first call succeeds:
 
 ```text
 Add a product support reply example using the existing OriginStartAI client style.
@@ -64,13 +58,18 @@ Add a product support reply example using the existing OriginStartAI client styl
 Convert this single API call into a reusable helper with retries and clear error messages.
 ```
 
-## Search Topics
+```text
+Add a streaming example that prints tokens as they arrive and handles timeout errors.
+```
 
-- Claude Code API starter.
-- OpenAI-compatible API starter.
-- AI API first call.
-- Chat completions from terminal.
-- LLM workflow starter.
+## If The First Call Fails
+
+| Symptom | Check |
+| --- | --- |
+| `401 Unauthorized` | Confirm the API key in `.env` is current and has no extra spaces. |
+| `insufficient credits` | Recharge in the OriginStartAI console, then retry the same command. |
+| `model not found` | Copy the enabled model name from the console into `ORIGINSTARTAI_MODEL`. |
+| `timeout` | Retry with a shorter prompt, then add retry and timeout handling before production use. |
 
 ## Environment
 
@@ -80,6 +79,8 @@ ORIGINSTARTAI_BASE_URL=https://YOUR_PUBLIC_API_BASE_URL/v1
 ORIGINSTARTAI_MODEL=YOUR_ENABLED_MODEL
 ```
 
+Do not commit `.env` or real API keys.
+
 ## Docs
 
 - [First call guide](docs/first-call.md)
@@ -87,12 +88,13 @@ ORIGINSTARTAI_MODEL=YOUR_ENABLED_MODEL
 - [Recharge and credits](docs/recharge-and-credits.md)
 - [Claude Code task prompts](docs/claude-code-prompts.md)
 
-## Troubleshooting
+## Search Topics
 
-- `401 Unauthorized`: check whether your API key is correct.
-- `insufficient credits`: recharge in the OriginStartAI console.
-- `model not found`: check whether the selected model is enabled for your account.
-- `timeout`: retry later, reduce the prompt size, or add retry logic.
+- Claude Code API starter.
+- OpenAI-compatible API starter.
+- AI API first call.
+- Chat completions from terminal.
+- LLM workflow starter.
 
 ## Links
 
