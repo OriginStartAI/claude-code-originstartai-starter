@@ -81,6 +81,16 @@ ORIGINSTARTAI_MODEL=YOUR_ENABLED_MODEL
 
 Do not commit `.env` or real API keys.
 
+## Production Trust Checks
+
+After the first call works, use the companion trust assets before moving a coding workflow into production:
+
+- Estimate monthly spend with [`ai-api-cost-calculator`](https://github.com/OriginStartAI/ai-api-cost-calculator).
+- Measure latency and success rate with [`ai-gateway-benchmark`](https://github.com/OriginStartAI/ai-gateway-benchmark).
+- Add a lightweight health check with [`originstart-status-examples`](https://github.com/OriginStartAI/originstart-status-examples).
+
+This path keeps the workflow practical: first call, cost estimate, benchmark, health check, then production usage.
+
 ## Docs
 
 - [First call guide](docs/first-call.md)
