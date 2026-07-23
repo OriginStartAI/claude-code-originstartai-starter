@@ -1,0 +1,36 @@
+name: Example request
+description: Request a Claude Code + OpenAI-compatible API example.
+title: "[Example]: "
+labels: ["example-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the request. Do not paste API keys, private endpoints, customer data, or server IPs.
+  - type: dropdown
+    id: example_type
+    attributes:
+      label: Example type
+      options:
+        - Claude Code setup
+        - Streaming
+        - Retry or fallback
+        - JSON output
+        - Framework integration
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: What are you trying to build?
+      description: Describe the workflow and expected result.
+    validations:
+      required: true
+  - type: textarea
+    id: current_attempt
+    attributes:
+      label: Current attempt
+      description: Share sanitized commands, model names, or error messages.
+    validations:
+      required: false
